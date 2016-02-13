@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="/static/lockandkey.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<title>Lock and Key</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body onload="update()">
+	
+	<script type="text/javascript">
+	
+		
+		
+     function update() {
+
+
+
+if (window.location.search.search("error") > 0)
+{
+	$('.error').html("<em>Invalid Passphrase</em>");
+}
+	}
+</script>
+	
+<div class="container">	
+	<div class="row">
+		<div class=".col-md-12">
+			<h1>
+				Lock and Key
+			</h1>
+		</div>
+		<form role="form" action="/authorize" method="post">
+		<div class="form-group">
+			<label for="pwd">Passphrase:</label>
+			<input type="text" maxlength="35" class="form-control" name="pwd">
+		</div>
+		<p class="error bg-danger"></p>
+		<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</div>
+
+</body>
+</html>
