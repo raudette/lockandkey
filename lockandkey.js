@@ -58,10 +58,12 @@ var modem;
 
 serialport.list(function (err, ports) {
   ports.forEach(function(port) {
-	if(port.manufacturer.search(Config.modemmanufacturerstring)>=0) {
+	if (!(port.manufacturer==undefined)) {
+		if(port.manufacturer.search(Config.modemmanufacturerstring)>=0) {
 		modemport=port.comName;
 		console.log("Using modem on " + modemport);
 		}
+	}
   });
 	if (modemport==undefined)
 		{
